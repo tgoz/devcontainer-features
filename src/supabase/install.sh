@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -euo pipefail
+set -e
 
 echo "===================================================="
 echo "STARTING INSTALL.SH FROM SUPABASE FEATURE"
