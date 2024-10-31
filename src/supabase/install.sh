@@ -22,7 +22,27 @@ cd docker
 # Copy the fake env vars
 cp .env.example .env
 
-# Pull the latest images
-docker compose pull
+cat >/usr/local/bin/supabase <<EOF
+#!/bin/sh
+
+case "$1" in
+    pull)
+        docker compose pull
+    ;;
+    up)
+        docker compose up -d
+    ;;
+    stop)
+        docker compose down
+    ;;
+    remove)
+        docker compose down -v --remove-orphans
+    ;;
+    *)
+        :
+esac
+
+EOF
+chmod +x /usr/local/bin/supabase
 
 echo "===================================================="
