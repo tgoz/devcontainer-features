@@ -7,6 +7,7 @@ echo "STARTING INSTALL.SH FROM SUPABASE FEATURE"
 echo "===================================================="
 
 set -x
+date
 id
 pwd
 set +x
