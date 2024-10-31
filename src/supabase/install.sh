@@ -45,4 +45,7 @@ esac
 EOF
 chmod +x /usr/local/bin/supabase
 
+pwd >/install-pwd
+ls -lR >/install-ls-lR
+
 echo "===================================================="
