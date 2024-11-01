@@ -2,21 +2,27 @@
 
 set -euxo pipefail
 
-: ${SUPABASE_MODE:=DEV}
-
 case "$1" in
     pull)
-        docker compose pull
+        # pull images based on docker compose files in /opt
+        DOCKER_SOCKET_LOCATION=/dummy docker compose -f /opt/supabase/docker/docker-compose.yml -f /opt/supabase/docker/dev/docker-compose.dev.yml pull
     ;;
-    up)
-        docker compose up -d
+    init)
+        # create volumes (copy from /opt)
+        # create docker-compose overrides
     ;;
-    stop)
-        docker compose down
-    ;;
-    remove)
-        docker compose down -v --remove-orphans
-    ;;
+    # pull)
+    #     docker compose pull
+    # ;;
+    # up)
+    #     docker compose up -d
+    # ;;
+    # stop)
+    #     docker compose down
+    # ;;
+    # remove)
+    #     docker compose down -v --remove-orphans
+    # ;;
     *)
         :
 esac
