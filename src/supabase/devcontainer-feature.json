@@ -1,9 +1,13 @@
 {
     "name": "Supabase",
     "id": "supabase",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Installs local (self-hosted) Supabase via docker-compose",
+    "containerEnv": {
+        "SUPABASE_WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+    },
     "dependsOn": {
+        "ghcr.io/LarsNieuwenhuizen/features/jqyq:0": {},
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
 			"enableNonRootDocker": "true",

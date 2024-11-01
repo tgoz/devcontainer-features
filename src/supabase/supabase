@@ -2,13 +2,35 @@
 
 set -euxo pipefail
 
+: ${SUPABASE_WORKSPACE_FOLDER:=$(echo /workspaces/*)}
+
+function ask_yes_or_no() {
+    read -p "$1 ([y]es or [N]o): "
+    case $(echo $REPLY | tr '[A-Z]' '[a-z]') in
+        y|yes) echo "yes" ;;
+        *)     echo "no" ;;
+    esac
+}
+
 case "$1" in
     pull)
         # pull images based on docker compose files in /opt
         DOCKER_SOCKET_LOCATION=/dummy docker compose -f /opt/supabase/docker/docker-compose.yml -f /opt/supabase/docker/dev/docker-compose.dev.yml pull
     ;;
     init)
-        # create volumes (copy from /opt)
+        mkdir -p "${SUPABASE_WORKSPACE_FOLDER}/supabase"
+        if [ ! -d "${SUPABASE_WORKSPACE_FOLDER}/supabase/volumes" ] || \
+            [ "yes" == $(ask_yes_or_no "Copy original volume contents to existing supabase/volumes directory?") ]
+        then
+            ( cd /opt/supabase/docker ; tar cf - volumes ) | ( cd ${SUPABASE_WORKSPACE_FOLDER}/supabase ; tar xvf - )
+        fi
+        if [ ! -f "${SUPABASE_WORKSPACE_FOLDER}/supabase/docker-compose.override.yml" ]; then
+            export PG_DATA_VOL=""
+            if [ "yes" ==  $(ask_yes_or_no "Retain database across restarts?") ]
+            then
+                export PG_DATA_VOL="${SUPABASE_WORKSPACE_FOLDER}/supabase/volumes/db/data"
+            fi
+        fi
         # create docker-compose overrides
     ;;
     # pull)
