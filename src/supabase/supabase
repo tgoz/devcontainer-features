@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+: ${SUPABASE_MODE:=DEV}
+
+case "$1" in
+    pull)
+        docker compose pull
+    ;;
+    up)
+        docker compose up -d
+    ;;
+    stop)
+        docker compose down
+    ;;
+    remove)
+        docker compose down -v --remove-orphans
+    ;;
+    *)
+        :
+esac

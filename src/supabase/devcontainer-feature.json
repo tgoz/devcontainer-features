@@ -1,7 +1,7 @@
 {
     "name": "Supabase",
     "id": "supabase",
-    "version": "0.0.4",
+    "version": "0.0.1",
     "description": "Installs local (self-hosted) Supabase via docker-compose",
     "dependsOn": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
