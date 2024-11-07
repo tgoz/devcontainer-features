@@ -1,0 +1,13 @@
+{
+    "tokyo": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "timezone": {
+                "fallbackTimezone": "Australia/Adelaide"
+            }
+        },
+        "containerEnv": {
+            "DEVTZ": "Asia/Tokyo"
+        }
+    }
+}

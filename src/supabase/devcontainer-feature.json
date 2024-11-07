@@ -1,0 +1,6 @@
+{
+    "id": "supabase",
+    "version": "0.0.1",
+    "name": "Supabase",
+    "description": "Install the supabase command-line interface."
+}

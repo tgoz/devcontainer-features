@@ -13,8 +13,9 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
+          - bun-lockb-diff
+          - supabase
+          - timezone
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -34,8 +35,9 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
+          - bun-lockb-diff
+          - supabase
+          - timezone
     steps:
       - uses: actions/checkout@v4
 
