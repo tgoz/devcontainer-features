@@ -52,6 +52,12 @@
             ]
         }
     },
-	"mounts": [ "source=/etc,target=/run/timezone-etc,type=bind,readonly" ],
+	"mounts": [
+        {
+            "source": "/etc",
+            "target": "/run/timezone-etc",
+            "type": "bind"
+        }
+    ],
     "postStartCommand": "/usr/local/bin/poststart-timezone"
 }
