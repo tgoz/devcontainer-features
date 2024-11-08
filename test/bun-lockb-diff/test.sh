@@ -39,7 +39,7 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "git config" bash -c "grep 'lockb' $HOME/.gitconfig"
+check "git config" bash -c "grep 'lockb' $HOME/.config/git/config"
 check "git attributes" bash -c "grep 'lockb binary diff=lockb' $HOME/.config/git/attributes"
 
 # Report results

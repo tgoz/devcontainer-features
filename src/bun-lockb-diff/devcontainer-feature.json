@@ -1,6 +1,6 @@
 {
     "id": "bun-lockb-diff",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name": "Bun lockb diff",
     "description": "Better git diff behaviour for Bun's lockb file."
 }
