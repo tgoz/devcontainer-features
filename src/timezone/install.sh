@@ -18,6 +18,6 @@ fi
 (
     echo '#!/bin/sh'
     echo "export DEFAULTTZ=${FALLBACKTIMEZONE}"
-    cat poststart.sh
-) >/usr/local/bin/poststart-timezone
-chmod +x /usr/local/bin/poststart-timezone 
+    cat set-timezone.sh
+) >/usr/local/bin/devcontainer-timezone-set
+chmod +x /usr/local/bin/devcontainer-timezone-set
