@@ -43,7 +43,7 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "poststart script present" bash -c "[ -x /usr/local/bin/poststart-timezone ]"
+check "devcontainer-timezone-set script present" bash -c "[ -x /usr/local/bin/devcontainer-timezone-set ]"
 check "timezone matches host" bash -c "LANG=C date --date=@0 | grep '$(LANG=C date --date=@0)'"
 
 # Report results
