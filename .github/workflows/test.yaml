@@ -14,7 +14,6 @@ jobs:
       matrix:
         features:
           - bun-lockb-diff
-          - supabase
           - timezone
         baseImage:
           - debian:latest
@@ -36,7 +35,6 @@ jobs:
       matrix:
         features:
           - bun-lockb-diff
-          - supabase
           - timezone
     steps:
       - uses: actions/checkout@v4
