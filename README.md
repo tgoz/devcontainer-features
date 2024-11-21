@@ -4,10 +4,6 @@
 
 Configure git to show a useful diff for [bun's lockb file](https://bun.sh/docs/install/lockfile).
 
-## supabase
-
-The [supabase command line interface](https://supabase.com/docs/guides/local-development)
-
 ## timezone
 
 Set your dev container's timezone from one of these sources. First available and valid source will be used; if a source is not set, blank, or not a valid timezone, the feature will go on to the next source.
