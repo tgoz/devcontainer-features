@@ -1,3 +1,7 @@
+## Deprecation Notice
+
+This feature is no longer useful since bun v1.2. Bun has moved to a text-base `bun.lock` file, in place of the former `bun.lockb`.
+
 ## Context
 
 See the documentation at [the bun website](https://bun.sh/docs/install/lockfile).
